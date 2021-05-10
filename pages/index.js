@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { ApolloClient, ApolloError, InMemoryCache, gql} from '@apollo/client/core'
+import 'cross-fetch/polyfill'
 
 export default function Home() {
   return (
@@ -66,4 +68,43 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN;
+console.log(GITHUB_TOKEN);
+if(typeof GITHUB_TOKEN === 'undefined') {
+    throw new Error('GITHUB_TOKEN cannot be found');
+}
+
+const client = new ApolloClient({
+    uri: 'https://api.github.com/graphql',
+    headers: {authorization: `Bearer ${GITHUB_TOKEN}`},
+    cache: new InMemoryCache()
+});
+
+const query = gql`
+    query {
+        search(query: "repo:YutoUrushima/github-issue-next-blog is:issue", type: ISSUE, first: 5) {
+        issueCount
+        nodes {
+            ... on Issue { number title }
+        }
+        }
+    }
+`
+
+client.query({query: query})
+    .then(result => handleApolloResult(result.data))
+    .catch(handleApolloError);
+
+function handleApolloResult(data) {
+    const { issueCount, nodes } = data.search;
+    console.log(`Num of issues: ${issueCount}`);
+    for(const issue of nodes) {
+        console.log(`* ${issue.number}: ${issue.title}`);
+    }
+}
+
+function handleApolloError(err) {
+    console.log(err.message);
 }
