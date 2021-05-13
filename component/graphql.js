@@ -10,3 +10,12 @@ export const GET_ISSUES = gql`
         }
     }
 `
+// export const GET_ISSUES_OTHER = gql`
+//     query {
+//         repository(owner: "YutoUrushima", name: "github-issue-next-blog") {
+//         description
+//         homepageUrl
+//         url
+//         }
+//     }
+// `
