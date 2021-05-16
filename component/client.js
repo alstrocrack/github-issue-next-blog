@@ -14,7 +14,16 @@ export const Issues = () => {
         <React.Fragment>
             <h2>Num of issues: {issueCount}</h2>
             <ul>
-                { nodes.map(issue => <li key={issue.number}>{issue.number} - {issue.title}</li>)}
+                { nodes.map(issue => 
+                <li key={issue.number}>
+                    <p>Title: {issue.title}</p>
+                    <p>Author: {issue.author.login}</p>
+                    <p>Time: {issue.createdAt}</p>
+                    <p>labels: {issue.labels.nodes.map(label => (
+                        <span key={label.id}><span>{label.name}</span></span>
+                    ))}</p>
+                    <p>Content: {issue.body}</p>
+                </li>)}
             </ul>
         </React.Fragment>
     )
