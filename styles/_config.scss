@@ -1,2 +1,19 @@
 $color-theme: #ddd;
 $font-base: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+
+$media-pc: 'screen and (min-width: 1080px)';
+$media-sp: 'screen and (max-width: 1079px)';
+
+// PC
+@mixin media-pc {
+    @media #{$media-pc} {
+        @content;
+    }
+}
+
+// SP
+@mixin media-sp {
+    @media #{$media-sp} {
+        @content;
+    }
+}

@@ -1,0 +1,14 @@
+@import '../config' ;
+
+.sns {
+    display: flex;
+    align-items: center;
+    &Item {
+        width: 30px;
+        margin-right: 10px;
+        img {
+        width: 100%;
+        object-fit: cover;
+        }
+    }
+}

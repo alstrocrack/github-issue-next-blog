@@ -3,10 +3,21 @@
 .header {
   background-color: $color-theme;
   color: #fff;
-  height: 100px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  &Inner {
+    @include media-pc {
+      width: 1080px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media-sp {
+      padding: 0 20px;
+    }
+  }
 }
 
 .main {
@@ -17,8 +28,11 @@
 .footer {
   background-color: $color-theme;
   color: #000;
-  height: 60px;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  &Inner {
+    text-align: center;
+  }
 }
