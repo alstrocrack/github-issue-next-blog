@@ -6,6 +6,7 @@ import { Issues, apolloClient } from '../component/client'
 import { ApolloProvider } from '@apollo/client'
 import Link from 'next/link'
 
+// experiment
 export default function Home() {
   return (
     <div className={styles.container}>
