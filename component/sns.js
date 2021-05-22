@@ -1,5 +1,6 @@
 import styles from '../styles/components/sns.module.scss'
 import Link from 'next/link'
+import classNames from 'classnames'
 
 const SNSList = [
     {title: 'github', link: '/'},
@@ -12,7 +13,7 @@ export const SNS = () => {
         <ul className={styles.sns}>
             {SNSList.map(sns => {
                 return (
-                    <li className={styles.snsItem}>
+                    <li className={classNames(sns.title, styles.snsItem)} >
                         <Link href={sns.link}>
                             <a target="_blank">
                                 <img src={`./b-${sns.title}-icon.png`} alt={sns.title}/>
