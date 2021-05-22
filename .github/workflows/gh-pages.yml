@@ -52,9 +52,8 @@ jobs:
 
     # gh-pagesブランチにoutディレクトリの中身をプッシュする
     # gh-pagesブランチは自動的に作成される
-    
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        deploy_key: $ {{secrets.GITHUB_DEPLOY_TOKEN}} 
+        github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./out
