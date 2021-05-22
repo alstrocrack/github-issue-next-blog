@@ -44,7 +44,7 @@ export const Issues = () => {
                             </div>
                         </div>
                         <div className={styles.right}>
-                            <div className={styles.content}>{issue.body}</div>
+                            <div className={styles.content} dangerouslySetInnerHTML={{__html:issue.bodyHTML}}/>
                         </div>
                     </li>
                 )}

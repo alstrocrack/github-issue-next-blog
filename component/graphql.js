@@ -11,7 +11,7 @@ export const GET_ISSUES = gql`
                     author {
                         login
                     }
-                    body
+                    bodyHTML
                     createdAt
                     labels(first: 5) {
                         totalCount
