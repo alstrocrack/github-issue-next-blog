@@ -45,6 +45,11 @@ export default function Home() {
               </a>
             </Link>
           </div>
+          <div className="sp">
+            <div className={styles.spFooter}>
+              <SNS/>
+            </div>
+          </div>
           <p>&copy;2021 YutoUrushima All Rights Reserved.</p>
         </div>
       </footer>

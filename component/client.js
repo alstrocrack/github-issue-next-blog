@@ -22,10 +22,10 @@ export const Issues = () => {
     if(error) return <p>This is an error : {error.message}</p>
     
     const { issueCount, nodes } = data.search
-    console.log({data});
+    console.log({nodes});
     return (
         <>
-            {/* <h2>Num of issues: {issueCount}</h2> */}
+            <h2 className={styles.totalCount}>ALL ARTICLES : {issueCount}</h2>
             <ul className={styles.list}>
                 { nodes.map(issue => 
                     <li key={issue.number} className={styles.item}>
@@ -45,6 +45,7 @@ export const Issues = () => {
                                 })}
                             </div>
                         </div>
+                        <div className={styles.line}></div>
                         <div className={styles.right}>
                             <div className={styles.content} dangerouslySetInnerHTML={{__html:issue.bodyHTML}}/>
                         </div>

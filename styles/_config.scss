@@ -10,6 +10,10 @@ $media-sp: 'screen and (max-width: 1079px)';
         width: 70%;
         min-width: 1080px;
     }
+    @include media-sp {
+        padding: 0 50px;
+        width: 100%;
+    }
 }
 
 // PC

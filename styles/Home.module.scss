@@ -15,7 +15,7 @@
       justify-content: space-between;
     }
     @include media-sp {
-      //
+      text-align: center
     }
   }
 }
@@ -34,4 +34,15 @@
   &Inner {
     text-align: center;
   }
+}
+
+.toTop {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.spFooter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
