@@ -25,7 +25,7 @@ export const Issues = () => {
     console.log({nodes});
     return (
         <>
-            {/* <h2>Num of issues: {issueCount}</h2> */}
+            <h2 className={styles.totalCount}>ALL ARTICLES : {issueCount}</h2>
             <ul className={styles.list}>
                 { nodes.map(issue => 
                     <li key={issue.number} className={styles.item}>
