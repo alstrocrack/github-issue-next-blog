@@ -11,9 +11,9 @@ const SNSList = [
 export const SNS = () => {
     return (
         <ul className={styles.sns}>
-            {SNSList.map(sns => {
+            {SNSList.map((sns, index) => {
                 return (
-                    <li className={classNames(sns.title, styles.snsItem)} >
+                    <li className={classNames(sns.title, styles.snsItem)} key={index}>
                         <Link href={sns.link}>
                             <a target="_blank">
                                 <img src={`./b-${sns.title}-icon.png`} alt={sns.title}/>
