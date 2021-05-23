@@ -3,9 +3,9 @@ import Link from 'next/link'
 import classNames from 'classnames'
 
 const SNSList = [
-    {title: 'github', link: '/'},
-    {title: 'twitter', link: '/'},
-    {title: 'wantedly', link: '/'},
+    {title: 'github', link: 'https://github.com/YutoUrushima'},
+    {title: 'twitter', link: 'https://twitter.com/home'},
+    {title: 'line', link: 'https://developers.line.biz/ja/'},
 ]
 
 export const SNS = () => {

@@ -8,21 +8,20 @@
   justify-content: center;
   align-items: center;
   &Inner {
+    @include content-width;
     @include media-pc {
-      width: 1080px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     @include media-sp {
-      padding: 0 20px;
+      //
     }
   }
 }
 
 .main {
-  width: 1080px;
-  margin: 0 auto;
+  @include content-width;
 }
 
 .footer {

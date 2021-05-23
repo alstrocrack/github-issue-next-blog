@@ -4,6 +4,14 @@ $font-base: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic
 $media-pc: 'screen and (min-width: 1080px)';
 $media-sp: 'screen and (max-width: 1079px)';
 
+@mixin content-width {
+    @include media-pc {
+        margin: 0 auto;
+        width: 70%;
+        min-width: 1080px;
+    }
+}
+
 // PC
 @mixin media-pc {
     @media #{$media-pc} {

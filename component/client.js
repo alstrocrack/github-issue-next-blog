@@ -2,10 +2,12 @@ import { GET_ISSUES } from './graphql'
 import { useQuery } from '@apollo/client'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import React from 'react'
-import Link from 'next/link'
 import styles from "../styles/client.module.scss";
 
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN
+if(typeof GITHUB_TOKEN === 'undefined') {
+    throw new Error('GITHUB_TOKEN cannot be found')
+}
 
 export const apolloClient = new ApolloClient({
   uri: 'https://api.github.com/graphql',
