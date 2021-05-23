@@ -41,7 +41,7 @@ export default function Home() {
           <div className={styles.toTop}>
             <Link href="/">
               <a>
-                To Top
+                &#8593;To Top
               </a>
             </Link>
           </div>
