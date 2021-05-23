@@ -123,7 +123,7 @@
         background-color: #eee;
         padding: 10px;
     }
-    a {
+    a:not(a[target="_blank"]) {
         border-bottom: 1px solid #000;
         cursor: pointer;
     }
