@@ -6,7 +6,6 @@ import { Issues, apolloClient } from '../component/client'
 import { ApolloProvider } from '@apollo/client'
 import Link from 'next/link'
 
-// experiment
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -45,6 +44,11 @@ export default function Home() {
                 To Top
               </a>
             </Link>
+          </div>
+          <div className="sp">
+            <div className={styles.spFooter}>
+              <SNS/>
+            </div>
           </div>
           <p>&copy;2021 YutoUrushima All Rights Reserved.</p>
         </div>

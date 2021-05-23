@@ -2,10 +2,12 @@ import { GET_ISSUES } from './graphql'
 import { useQuery } from '@apollo/client'
 import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import React from 'react'
-import Link from 'next/link'
 import styles from "../styles/client.module.scss";
 
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN
+if(typeof GITHUB_TOKEN === 'undefined') {
+    throw new Error('GITHUB_TOKEN cannot be found')
+}
 
 export const apolloClient = new ApolloClient({
   uri: 'https://api.github.com/graphql',
@@ -20,10 +22,10 @@ export const Issues = () => {
     if(error) return <p>This is an error : {error.message}</p>
     
     const { issueCount, nodes } = data.search
-    console.log({data});
+    console.log({nodes});
     return (
         <>
-            {/* <h2>Num of issues: {issueCount}</h2> */}
+            <h2 className={styles.totalCount}>ALL ARTICLES : {issueCount}</h2>
             <ul className={styles.list}>
                 { nodes.map(issue => 
                     <li key={issue.number} className={styles.item}>
@@ -43,6 +45,7 @@ export const Issues = () => {
                                 })}
                             </div>
                         </div>
+                        <div className={styles.line}></div>
                         <div className={styles.right}>
                             <div className={styles.content} dangerouslySetInnerHTML={{__html:issue.bodyHTML}}/>
                         </div>

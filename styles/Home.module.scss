@@ -8,21 +8,20 @@
   justify-content: center;
   align-items: center;
   &Inner {
+    @include content-width;
     @include media-pc {
-      width: 1080px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     @include media-sp {
-      padding: 0 20px;
+      text-align: center
     }
   }
 }
 
 .main {
-  width: 1080px;
-  margin: 0 auto;
+  @include content-width;
 }
 
 .footer {
@@ -35,4 +34,15 @@
   &Inner {
     text-align: center;
   }
+}
+
+.toTop {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.spFooter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }

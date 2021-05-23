@@ -4,8 +4,15 @@
     display: flex;
     align-items: center;
     &Item {
-        margin-right: 10px;
         width: 30px;
+        &:not(:last-child) {
+            @include media-pc {
+                margin-right: 30px;
+            }
+            @include media-sp {
+                margin-right: 20px;
+            }
+        }
         img {
         width: 100%;
         object-fit: cover;

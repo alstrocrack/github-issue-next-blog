@@ -1,42 +1,101 @@
 @import '_config';
 
+.totalCount {
+    margin-top: 50px;
+}
+
 .list {
-    margin: 100px auto;
+    @include media-pc {
+        margin: 20px auto 50px;
+    }
+    @include media-sp {
+        margin: 20px auto 50px;
+    }
 }
 
 .item {
+    position: relative;
     width: 100%;
     height: auto;
-    margin-bottom: 60px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #ccc;
-    padding: 50px;
-    display: flex;
-    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    @include media-pc {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+        padding: 40px 50px;
+    }
+    @include media-sp {
+        display: block;
+        margin-bottom: 50px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: #000;
+        @include media-pc {
+            top: 50%;
+            left: 40%;
+            width: 1px;
+            height: 95%;
+            transform: translateY(-50%);
+        }
+    }
 }
 
 .left {
-    border-right: 1px solid #000;
-    padding-right: 20px;
+    @include media-pc {
+        padding-right: 50px;
+        width: 40%;
+        flex-shrink: 0;
+    }
+    @include media-sp {
+        display: block;
+        border-bottom: 1px solid #000;
+        padding: 20px ;
+    }
 }
 
 .right {
-    flex-shrink: 0;
-    padding-left: 20px;
+    @include media-pc {
+        flex-shrink: 0;
+        padding-left: 50px;
+        width: 59%;
+        height: 100%;
+        flex-shrink: 0;
+    }
+    @include media-sp {
+        padding: 20px;
+    }
 }
 
 .title {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    
+    width: 90%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    @include media-pc {
+        margin-bottom: 30px;
+    }
+    @include media-sp {
+        margin-bottom: 15px ;
+    }
 }
 
 .info {
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .author {
-    margin-right: 20px;
+    margin-right: 25px;
+    
 }
 
 .labels {
@@ -45,8 +104,27 @@
 }
 
 .label {
-    padding: 0 10px;
+    padding: 5px 20px;
     border-radius: 20px;
     color: #fff;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.content {
+    & > p > * {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+     img {
+        width: 100%;
+    }
+    code {
+        background-color: #eee;
+        padding: 10px;
+    }
+    a:not(a[target="_blank"]) {
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+    }
 }
