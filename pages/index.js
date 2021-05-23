@@ -41,9 +41,14 @@ export default function Home() {
           <div className={styles.toTop}>
             <Link href="/">
               <a>
-                &#8593;To Top
+                To Top
               </a>
             </Link>
+          </div>
+          <div className="sp">
+            <div className={styles.spFooter}>
+              <SNS/>
+            </div>
           </div>
           <p>&copy;2021 YutoUrushima All Rights Reserved.</p>
         </div>
