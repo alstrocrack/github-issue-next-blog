@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import React from 'react'
 import styles from "../styles/client.module.scss";
 
-const GITHUB_ISSUE_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN
+const GITHUB_ISSUE_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN;
 console.log(GITHUB_ISSUE_TOKEN);
 if(typeof GITHUB_ISSUE_TOKEN === 'undefined') {
     throw new Error('GITHUB_ISSUE_TOKEN cannot be found')
