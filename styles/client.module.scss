@@ -32,12 +32,12 @@
     &::after {
         content: '';
         position: absolute;
-        background-color: #000;
+        background-color: #ccc;
         @include media-pc {
             top: 50%;
             left: 40%;
             width: 1px;
-            height: 95%;
+            height: 100%;
             transform: translateY(-50%);
         }
     }
