@@ -4,14 +4,14 @@ import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import React from 'react'
 import styles from "../styles/client.module.scss";
 
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN
-if(typeof GITHUB_TOKEN === 'undefined') {
-    throw new Error('GITHUB_TOKEN cannot be found')
+const GITHUB_ISSUE_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN
+if(typeof GITHUB_ISSUE_TOKEN === 'undefined') {
+    throw new Error('GITHUB_ISSUE_TOKEN cannot be found')
 }
 
 export const apolloClient = new ApolloClient({
   uri: 'https://api.github.com/graphql',
-  headers: {authorization: `Bearer ${GITHUB_TOKEN}`},
+  headers: {authorization: `Bearer ${GITHUB_ISSUE_TOKEN}`},
   cache: new InMemoryCache()
 })
 
