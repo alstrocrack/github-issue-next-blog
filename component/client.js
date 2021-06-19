@@ -4,6 +4,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client/core'
 import React from 'react'
 import styles from "../styles/client.module.scss";
 
+// トークンの取得
 const GITHUB_ISSUE_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN;
 
 export const apolloClient = new ApolloClient({
