@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 const SNSList = [
     {title: 'github', link: 'https://github.com/YutoUrushima'},
-    {title: 'twitter', link: 'https://twitter.com/home'},
+    {title: 'twitter', link: 'https://twitter.com/Frontend_1220'},
     {title: 'line', link: 'https://developers.line.biz/ja/'},
 ]
 
