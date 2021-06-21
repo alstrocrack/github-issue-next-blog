@@ -15,7 +15,7 @@ export const SNS = () => {
                 return (
                     <li className={classNames(sns.title, styles.snsItem)} key={index}>
                         <Link href={sns.link}>
-                            <a target="_blank">
+                            <a target="_blank" rel="noopener noreferrer">
                                 <img src={`./b-${sns.title}-icon.png`} alt={sns.title}/>
                             </a>
                         </Link>
