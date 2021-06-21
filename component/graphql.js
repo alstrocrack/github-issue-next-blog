@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const GET_ISSUES = gql`
     query getIssues {
-        search(query: "repo:YutoUrushima/github-issue-next-blog is:issue", type: ISSUE, first: 5) {
+        search(query: "repo:YutoUrushima/github-issue-next-blog is:issue", type: ISSUE, first: 250) {
             issueCount
             nodes {
                 ... on Issue {
@@ -13,7 +13,7 @@ export const GET_ISSUES = gql`
                     }
                     bodyHTML
                     createdAt
-                    labels(first: 5) {
+                    labels(first: 250) {
                         totalCount
                         nodes {
                             id
