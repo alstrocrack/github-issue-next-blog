@@ -1,24 +1,11 @@
-import { GET_ISSUES } from "./graphql";
+import GetIssues from "../query/GetIssues";
 import { useQuery } from "@apollo/client";
-import { ApolloClient, InMemoryCache } from "@apollo/client/core";
 import React from "react";
 import { Node } from "../types/Issue";
 import styles from "../styles/client.module.scss";
 
-const GITHUB_ISSUE_TOKEN = process.env.NEXT_PUBLIC_GITHUB_ISSUE_TOKEN;
-
-if (!GITHUB_ISSUE_TOKEN) {
-  throw new Error("Environment variables not set");
-}
-
-export const apolloClient = new ApolloClient({
-  uri: "https://api.github.com/graphql",
-  headers: { authorization: `Bearer ${GITHUB_ISSUE_TOKEN}` },
-  cache: new InMemoryCache(),
-});
-
-export const Issues = () => {
-  const { loading, error, data } = useQuery(GET_ISSUES);
+const Issues = () => {
+  const { loading, error, data } = useQuery(GetIssues);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>This is an error : {error.message}</p>;
@@ -57,3 +44,5 @@ export const Issues = () => {
     </>
   );
 };
+
+export default Issues;

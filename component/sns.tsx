@@ -7,7 +7,7 @@ const SNSList = [
   { title: "line", link: "https://developers.line.biz/ja/" },
 ];
 
-export const SNS = () => {
+export const Sns = () => {
   return (
     <ul className={styles.sns}>
       {SNSList.map((sns, index) => {

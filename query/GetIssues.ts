@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_ISSUES = gql`
+const GetIssues = gql`
   query getIssues {
     search(query: "repo:YutoUrushima/github-issue-next-blog is:issue", type: ISSUE, first: 100) {
       issueCount
@@ -26,3 +26,5 @@ export const GET_ISSUES = gql`
     }
   }
 `;
+
+export default GetIssues;
