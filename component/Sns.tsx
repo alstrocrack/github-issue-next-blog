@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 const SNSList = [
   { title: "github", link: "https://github.com/YutoUrushima" },
-  { title: "twitter", link: "https://twitter.com/Frontend_1220" },
+  { title: "twitter", link: "https://twitter.com/developer_japan" },
   { title: "line", link: "https://developers.line.biz/ja/" },
 ];
 
