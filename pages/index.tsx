@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
-import { Sns } from "../component/sns";
-import { Icon } from "../component/icon";
+import { Sns } from "../component/Sns";
+import { Icon } from "../component/Icon";
 import Client from "../client/Client";
 import Issues from "../component/Issues";
 import { ApolloProvider } from "@apollo/client";
