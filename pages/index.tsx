@@ -1,8 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
-import { SNS } from "../component/sns";
-import { ICON } from "../component/icon";
-import { Issues, apolloClient } from "../component/client";
+import { Sns } from "../component/Sns";
+import { Icon } from "../component/Icon";
+import Client from "../client/Client";
+import Issues from "../component/Issues";
 import { ApolloProvider } from "@apollo/client";
 import Link from "next/link";
 import React from "react";
@@ -33,18 +34,18 @@ const Home: React.FC = () => {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <div className="pc">
-            <ICON />
+            <Icon />
           </div>
           <h1>GitHub Issues Blog</h1>
           <div className="pc">
-            <SNS />
+            <Sns />
           </div>
         </div>
       </header>
 
       <main className={styles.main}>
         <div className={styles.card}>
-          <ApolloProvider client={apolloClient}>
+          <ApolloProvider client={Client}>
             <Issues />
           </ApolloProvider>
         </div>
@@ -57,7 +58,7 @@ const Home: React.FC = () => {
           </div>
           <div className="sp">
             <div className={styles.spFooter}>
-              <SNS />
+              <Sns />
             </div>
           </div>
           <p>&copy;2021 YutoUrushima All Rights Reserved.</p>
